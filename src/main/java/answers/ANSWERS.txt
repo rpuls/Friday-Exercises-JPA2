@@ -1,0 +1,25 @@
+ Describe how we have handled persistence in the last three semesters. The considerations should
+include all relevant layers. File IO, Relational Databases, the browsers local storage and cookies on the
+browser.
+
+1. fileHandler with file reader and file writer, we have stored a dictionary in the weblanguage project, and
+reloaded it again with the fileReader.
+
+2. We have manually made datamappers for mySQL databases, which used to store data from webpages on the client 
+side through a servlet and finally to the datamapper, which were also use to get data out of the DB.
+
+3. We are now using JPA , using the entityManager class and persistenceUnit  to persist data.
+
+
+ Explain the Pros & Cons in using an Object Relational Mapping Framework
+
+
+ Elaborate on some of the problems a ORM tries to solve
+Tires to minimize manual work, to save time/money/budget in programming projects, it also helps keeping
+the oo programs consistent with the database, since the database is created from the oo blueprint, or
+the other way around (entity class from database) - this keeps class file consistent with table.
+
+ Explain how Inheritance in an OO language can be mapped to tables in a relational database
+classes that inherits from a parent will as default be created as a single table, containing a tuple for each
+class and a DTYPE column in the table with the name (sort of enum'ish) for each inherited class. Alternativly
+we can  create a table for each child class, using annotations.
