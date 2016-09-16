@@ -32,6 +32,7 @@ public class Person implements Serializable {
     @JoinColumn(name = "supervisor")
     @OneToMany
     private List<Person> supervised = new ArrayList();
+    private List<Grade> grades = new ArrayList();
 
     public Person(String firstName, String lastName, Date birthDate, int age, boolean isMarried) {
         this.firstName = firstName;

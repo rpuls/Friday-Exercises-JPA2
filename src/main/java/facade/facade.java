@@ -56,12 +56,12 @@ public class facade {
         adPerson.add(p);
     }
 
-    public void addStudent(Student p) {
-        adStudent.add(p);
+    public void addStudent(Student s) {
+        adStudent.add(s);
     }
 
-    public void addEmployee(Employee p) {
-        adEmployee.add(p);
+    public void addEmployee(Employee e) {
+        adEmployee.add(e);
     }
 
     //READ
@@ -78,7 +78,18 @@ public class facade {
     }
 
     //UPDATE
-    
+    public void updateFirstName(String name, int id){
+        Person person = em.find(Person.class, id);
+        try {
+            em.getTransaction().begin();
+            person.setFirstName(name);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
     
     //DELETE
     public void deletePerson(Person p) {
